@@ -1,10 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
+import {db} from '../db/setup'
+
 const router = express.Router();
 
-/* GET home page. */
-router.get('/devices', function(req: Request, res: Response, next: NextFunction) {
-  // res.render('index', { title: 'Express' });
-  res.send("hi");
+router.get('/devices', async function(req: Request, res: Response, next: NextFunction) {
+  await db.query("SELECT * FROM tbl_device").then((devices) => res.send(devices));
 });
 
 export default router;
