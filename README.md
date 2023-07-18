@@ -7,14 +7,28 @@
 - Build script to compile all the typescript files to javascript
 - Containerize the postgresql database as a standalone from the app itself
 
+## Issues
+
+- I ran into the problem where I could start a database but it was having problems connecting continuosly and making requests
+
 ## Running
 
+Requires:
+
+- psql, installed with brew via `brew install postgresql@14`
+
 The idea was to run from within api:
+
 ```
 npm run build && npm run start
 ```
 
 followed by running from client:
+
 ```
 npm run start
 ```
+
+## Tests
+
+`npm test`
